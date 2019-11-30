@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="dropdown.css">
+    <script src="dropdown.js"></script>
+    <title>Dropdown.js</title>
+</head>
+
+<body>
+
+    <!-- Using dd.js -->
+
+    <div> TESTING </div>
+    <div id="dd1"></div>
+    <div id="dd2"></div>
+
+    <script>
+        /**
+         * FIRST WAY OF INITIALISING THE LIBRARY
+         * lIBRARY EXPECTS AN ELEMENT iD, OPTIONS ARRAY WITH "data" OBJECT OF PLAIN ARRAY
+         * AND THE CALLBACK WHEN THE OPTIONS IS SELECTED 
+        */
+        var DD = new Dropdown('dd1',  { data : ['ARR', 'two', 'three']}, function(val){
+            console.log(val)
+            console.log(DD2.getValue)
+            console.log(DD.getValue)
+        })
+        /**
+         * SECOND WAY OF INITIALISING THE LIBRARY
+         * lIBRARY EXPECTS AN ELEMENT iD, OPTIONS ARRAY WITH "data" OBJECT OF PLAIN ARRAY
+         * onSelect METHOD CAN BE CALLED TO USE THE SELECTED VALUE WHEN SET.
+        */
+        var DD2 = new Dropdown('dd2',  { data : ['four', 'five', 'six']})
+        DD2.onSelect(function(val){
+            console.log(val)
+            console.log(DD2.getValue)
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>
